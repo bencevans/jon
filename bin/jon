@@ -41,28 +41,43 @@ debug('path: %j', path);
 debug('target: %j', target);
 debug('func: %j', func);
 
-fs.readFile(path, 'utf8', function(error, string) {
-  if(error) return handleError;
-  var json = JSON.parse(string);
 
-  if(func == 'get') {
-    var output;
-    eval('output=json' + ((target) ? '.' + target : ''));
-    console.log(JSON.stringify(output, null, 2));
-  } else if(func == 'set') {
-    var targetJSON;
-    eval('json' + ((target) ? '.' + target : '') + ' = ' + JSON.stringify(setValue));
-    debug('targetJSON: %j', targetJSON);
-    debug('json: %j', json);
-    debug('saving...');
-    fs.writeFile(path, JSON.stringify(json, null, 2), function(error) {
-      if(error) return handleError(error);
-      debug('saved.');
-      console.log(JSON.stringify(setValue));
+fs.exists(path, function(exists) {
+  if(!exists) return handleError(new Error('Invalid Path'));
+
+  fs.stat(path, function(error, stats) {
+    if(error) return handleError(error);
+    if(!stats.isFile()) return handleError(new Error('The path `' + path + '` is not a valid file'));
+
+    fs.readFile(path, 'utf8', function(error, string) {
+      if(error) return handleError;
+      var json = JSON.parse(string);
+
+      if(func == 'get') {
+        var output;
+        eval('output=json' + ((target) ? '.' + target : ''));
+        console.log(JSON.stringify(output, null, 2));
+      } else if(func == 'set') {
+        var targetJSON;
+        eval('json' + ((target) ? '.' + target : '') + ' = ' + JSON.stringify(setValue));
+        debug('targetJSON: %j', targetJSON);
+        debug('json: %j', json);
+        debug('saving...');
+        fs.writeFile(path, JSON.stringify(json, null, 2), function(error) {
+          if(error) return handleError(error);
+          debug('saved.');
+          console.log(JSON.stringify(setValue));
+        });
+      }
+
     });
-  }
+
+  });
 
 });
+
+
+
 
 
 

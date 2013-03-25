@@ -1,7 +1,7 @@
 {
   "name": "jon",
   "version": "0.0.0",
-  "description": "The JSON Get/Set Junkie",
+  "description": "JSON Get/Set CLI Tool",
   "main": "index.js",
   "directories": {
     "test": "tests"
