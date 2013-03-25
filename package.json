@@ -1,6 +1,6 @@
 {
   "name": "jon",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "JSON Get/Set CLI Tool",
   "main": "index.js",
   "directories": {
