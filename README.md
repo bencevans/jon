@@ -22,13 +22,16 @@ getting:
 setting (currently string only):
 
     $ jon config.json proxy "127.0.0.1:8080"
+    "127.0.0.1:8080" # JSON Parsed & Stringified Value (to check)
 
 ## Example
 
     $ jon package.json name
     "like-a-boss-bootstrap"
     $ jon package.json name too-jazzy
+    "too-jazzy"
     $ jon package.json description "Play's jazzy tunes"
+    "Play's jazzy tunes"
     $ jon package.json
     {
       "name": "too-jazzy",
