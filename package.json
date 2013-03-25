@@ -19,5 +19,6 @@
     "url": "git://github.com/bencevans/jon.git"
   },
   "author": "Ben Evans <ben@bensbit.co.uk> (http://bensbit.co.uk)",
-  "license": "MIT"
+  "license": "MIT",
+  "bin": "bin/jon"
 }
