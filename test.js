@@ -7,14 +7,14 @@ describe('jon', function() {
   it('should error if no path provided', function(done) {
     var jon = spawn('bin/jon');
     jon.on('close', function (code) {
-      assert.equal(code, 1);
+      assert.notEqual(code, 0);
       done();
     });
   });
   it('should error if path provided resolves to no file', function(done) {
     var jon = spawn('bin/jon', ['no-file-exists-path.json']);
     jon.on('close', function (code) {
-      assert.equal(code, 1);
+      assert.notEqual(code, 0);
       done();
     });
   });
