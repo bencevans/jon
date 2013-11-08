@@ -2,6 +2,9 @@
 
 JSON Get/Set CLI Tool.
 
+[![Build Status](https://travis-ci.org/bencevans/jon.png?branch=master)](https://travis-ci.org/bencevans/jon)
+[![Coverage Status](https://coveralls.io/repos/bencevans/jon/badge.png?branch=master)](https://coveralls.io/r/bencevans/node-compact2string?branch=master)
+
 Ever wanted to just update or get a value from a JSON file without opening... finding... replacing? Now you can using the familiar JavaScript notation from your terminal.
 
 command:
