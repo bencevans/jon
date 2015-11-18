@@ -1,64 +1,44 @@
-# Jon
+# Jon [![Build Status](https://img.shields.io/travis/bencevans/jon.svg?style=flat-square)](https://travis-ci.org/bencevans/jon) [![Coverage Status](https://img.shields.io/coveralls/bencevans/jon.svg?style=flat-square)](https://coveralls.io/r/bencevans/node-compact2string?branch=master)
 
-JSON Get/Set CLI Tool.
-
-[![Build Status](https://travis-ci.org/bencevans/jon.png?branch=master)](https://travis-ci.org/bencevans/jon)
-[![Coverage Status](https://coveralls.io/repos/bencevans/jon/badge.png?branch=master)](https://coveralls.io/r/bencevans/node-compact2string?branch=master)
-
-Ever wanted to just update or get a value from a JSON file without opening... finding... replacing? Now you can using the familiar JavaScript notation from your terminal.
-
-command:
-
-    jon <json file path> <identifier> [value]
-
-getting:
-
-    $ jon package.json name
-    'jon'
-
-    $ jon package.json dependencies
-    {
-      "debug": "~0.7.2",
-      "optimist": "~0.3.5"
-    }
-
-    $ jon package.json dependencies.debug
-    "~0.7.2"
-
-setting (currently string only):
-
-    $ jon config.json proxy "127.0.0.1:8080"
-    "127.0.0.1:8080" # JSON Parsed & Stringified Value (to check)
-
-## Example
-
-    $ jon package.json name
-    "like-a-boss-bootstrap"
-    $ jon package.json name too-jazzy
-    "too-jazzy"
-    $ jon package.json description "Play's jazzy tunes"
-    "Play's jazzy tunes"
-    $ jon package.json
-    {
-      "name": "too-jazzy",
-      "description": "Play's jazzy tunes"
-    }
-    $ jon package.json description
-    "Play's jazzy tunes"
+> CLI JSON file manipulator.
 
 ## Install
 
-Assuming you have [Node.js (& npm)](http://nodejs.org) installed.
+    $ npm install --global jon
 
-```bash
-npm install -g jon
-```
-## Links
+## Usage
 
-Module: [GitHub](https://github.com/bencevans/jon) [npm](https://npmjs.org/package/jon)
+    command:
 
-Author: [Twitter](https://twitter.com/bencevans)
+        jon <json file path> <identifier> [value]
+
+    getting:
+
+        $ jon package.json name
+        'jon'
+
+        $ jon package.json dependencies
+        {
+          "debug": "~0.7.2",
+          "optimist": "~0.3.5"
+        }
+
+        $ jon package.json dependencies.debug
+        "~0.7.2"
+
+    setting (currently string only):
+
+        $ jon config.json proxy "127.0.0.1:8080"
+        "127.0.0.1:8080" # JSON Parsed & Stringified Value (to check)
+
+## Example
+
+    $ jon package.json scripts.start
+    "node app.js"
+
+    $ jon package.json scripts.test "make test"
+
 
 ## Licence
 
-MIT
+MIT © [Ben Evans](http://bensbit.co.uk)
