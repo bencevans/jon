@@ -7,13 +7,13 @@
     "test": "tests"
   },
   "dependencies": {
-    "debug": "~0.7.3",
+    "debug": "^2.2.0",
     "optimist": "~0.6.0"
   },
   "devDependencies": {
-    "mocha": "~1.14.0",
-    "istanbul": "~0.1.44",
-    "coveralls": "~2.3.0"
+    "coveralls": "^2.11.4",
+    "istanbul": "^0.4.0",
+    "mocha": "^2.3.4"
   },
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha -R spec test.js",
